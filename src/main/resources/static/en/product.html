@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+
+    <!-- CSS -->
+    <link href="../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../global/global.css" rel="stylesheet" type="text/css">
+    <link href="../global/globalDetail.css" rel="stylesheet" type="text/css">
+    <link href="product.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../global/global.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang">
+                    <a href="product.html">
+                        <img src="../images/lang/usa_color.png" width="50px" />
+                    </a>
+                </button>
+                <button class="responsive-btn-lang">
+                    <a href="../ko/product.html">
+                        <img src="../images/lang/korea_black.png" class="ko-flag" width="50px"
+                            onmouseover="this.src='../images/lang/korea_color.png'" 
+                            onmouseout="this.src='../images/lang/korea_black.png'" />
+                    </a>
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="mission.html">COMPANY</a>
+                <a href="market.html">MARKET</a>
+                <a href="product.html">PRODUCT</a>
+                <a href="development.html">R&D</a>
+                <a href="../board/list">NEWS</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <button onclick="goEnHome()">
+            <img src="../images/logo/main_logo.png" class="header-mainlogo" width="150px" />
+        </button>
+        <div>
+            <button class="btn-lang">
+                <a href="product.html">
+                    <img src="../images/lang/usa_color.png" class="en-flag" width="50px" />
+                </a>
+            </button>
+            <button class="btn-lang">
+                <a href="../ko/product.html">
+                    <img src="../images/lang/korea_black.png" class="ko-flag" width="50px"
+                        onmouseover="this.src='../images/lang/korea_color.png'" 
+                        onmouseout="this.src='../images/lang/korea_black.png'" />
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu-area">
+            <p class="offPage">
+                <a href="mission.html">COMPANY</a>
+            </p>
+            <p class="offPage">
+                <a href="market.html">MARKET</a>
+            </p>
+            <p class="onPage">
+                <a href="product.html">PRODUCT</a>
+            </p>
+            <p class="offPage">
+                <a href="development.html">R&D</a>
+            </p>
+            <p class="offPage">
+                <a href="../board/list">NEWS</a>
+            </p>
+        </div>
+        <div class="contents-area">
+            <div class="sub-menu-area">
+                <div class="sub-onPage">
+                    <a href="#machine">MACHINE</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="#control">CONTROL</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="#sensor">SENSOR</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="#etc">ETC.</a>
+                </div>
+            </div>
+            <div class="contents-detail-area">
+                <div class="detail1">
+                    All products and services provided by ECSprime are designed to meet the needs of our customers. Products offered through our specialized verification process not only satisfy the needs of our customers, but are also tracked and maintained in the best condition and function until the moment you want it to end.
+                </div>
+                <div id="machine" class="detail2">
+                    <p>MACHINE</p>
+                    <div class="sub-detail2">
+                        <video controls loop muted preload="지원불가" src="../video/abc.mp4" type="video/mp4" poster="../images/product/abc.PNG" width="40%">
+                            영상을 재생할 수 없습니다.
+                        </video>
+                        <div>
+                            <p class="sub-detail2-name">Machine1</p>
+                            <p class="sub-detail2-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum felis orci, aliquam et auctor quis, ornare id sapien. In mattis velit arcu, et ullamcorper ligula tincidunt sed. Ut porttitor ullamcorper neque egestas laoreet. In hac habitasse platea dictumst. Nam dapibus molestie leo, eget feugiat lacus dapibus ut. Integer quis ipsum diam. Curabitur ac malesuada risus. Donec feugiat velit et rhoncus suscipit.</p>
+                        </div>
+                    </div>
+                    <div class="sub-detail2">
+                        <video controls loop muted preload="지원불가" src="../video/def.mp4" type="video/mp4"  poster="../images/product/def.PNG" width="40%">
+                            영상을 재생할 수 없습니다.
+                        </video>
+                        <div>
+                            <p class="sub-detail2-name">Machine2</p>
+                            <p class="sub-detail2-txt">Maecenas sit amet lectus aliquet, sollicitudin nulla in, sagittis est. Donec congue odio vitae nisl fringilla finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor sollicitudin turpis, at fringilla nisl venenatis non. Donec fermentum vitae magna id rhoncus. Aliquam tempor, nibh non porta accumsan, ante quam varius lacus, quis venenatis est quam nec erat. Fusce tristique cursus condimentum. Morbi elementum orci ut ligula pellentesque porta. Vestibulum aliquet interdum nibh, ac tempus arcu ullamcorper ut. Vestibulum iaculis augue in lectus accumsan fringilla.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="control" class="detail2">
+                    <p>CONTROL</p>
+                    <div class="sub-detail2">
+                        <img src="../images/product/m2m_rmcu.jpg" width="100%" />
+                        <div>
+                            <p class="sub-detail2-name">Control1</p>
+                            <p class="sub-detail2-txt">Nullam velit turpis, viverra sed blandit a, aliquam at nisi. Donec et consequat risus. Morbi dictum tortor at euismod finibus. Pellentesque vestibulum dictum pellentesque. Aliquam venenatis, justo eu posuere cursus, augue justo imperdiet est, nec vulputate erat metus id ipsum. Nullam eu nisi quis mauris pretium viverra. Ut rhoncus lorem nec eros accumsan semper. Praesent iaculis ultricies mauris nec sollicitudin. Aenean pretium in diam a consectetur. Duis malesuada quis metus id ultricies. Fusce euismod urna vitae lobortis cursus. Pellentesque ac vestibulum ipsum. In eleifend velit at hendrerit posuere.</p>
+                        </div>
+                    </div>
+                    <div class="sub-detail2">
+                        <img src="../images/product/machine_control_unit.jpg" width="100%" />
+                        <div>
+                            <p class="sub-detail2-name">Control2</p>
+                            <p class="sub-detail2-txt">Donec gravida odio quis fermentum gravida. In ornare, dolor quis eleifend semper, mi tortor convallis nisi, non faucibus mi nulla sit amet nulla. Proin tortor eros, dictum at mattis in, ultrices in diam. Nullam id risus condimentum, convallis justo sed, suscipit mauris. Pellentesque sit amet tempor eros, sed aliquam arcu. Curabitur quis elit vehicula, laoreet tortor vitae, porttitor enim. Maecenas et lectus dapibus, tempus magna blandit, pellentesque risus. Curabitur auctor magna commodo justo vestibulum pretium.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="sensor" class="detail2">
+                    <p>SENSOR</p>
+                    <div class="sub-detail2">
+                        <img src="../images/product/mgmc_integrated_controller.jpg" width="100%" />
+                        <div>
+                            <p class="sub-detail2-name">Sensor1</p>
+                            <p class="sub-detail2-txt">Sed vitae posuere lectus. Donec interdum magna libero, ac dignissim neque pellentesque quis. Fusce sit amet hendrerit neque, nec scelerisque felis. Aliquam faucibus ante sit amet eleifend fermentum. Donec molestie sem nulla, aliquam cursus orci suscipit ut. Pellentesque pulvinar mi et convallis malesuada. Suspendisse in turpis sed sapien ornare porta id quis sapien. Aliquam porttitor urna nec felis posuere, et egestas nulla efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac cursus libero. Nullam ut ipsum a odio placerat vestibulum nec in mi. Curabitur turpis ex, dignissim ut dictum eu, blandit vel leo. Nam laoreet ex condimentum leo fringilla, id aliquet arcu malesuada. Morbi eros dolor, malesuada quis turpis sed, tempor porttitor tellus. Fusce ut ultricies augue.</p>
+                        </div>
+                    </div>
+                    <div class="sub-detail2">
+                        <img src="../images/product/mgmc_integrated_controller2.jpg" width="40%" />
+                        <div>
+                            <p class="sub-detail2-name">Sensor2</p>
+                            <p class="sub-detail2-txt">Aenean placerat nibh et odio venenatis, eget vulputate odio mattis. Suspendisse fermentum malesuada augue at bibendum. Pellentesque finibus massa sed arcu sagittis, ut fermentum elit sodales. Phasellus arcu neque, ultrices vel consequat vitae, varius eget ligula. Quisque blandit convallis aliquet. Aliquam placerat vehicula sem posuere tristique. Ut dapibus hendrerit neque non condimentum. Donec efficitur ac elit lobortis rhoncus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="etc" class="detail2">
+                    <p>ETC..</p>
+                    <div class="sub-detail2">
+                        <video controls loop muted preload="지원불가" src="../video/def.mp4" type="video/mp4"  poster="../images/product/def.PNG" width="40%">
+                            영상을 재생할 수 없습니다.
+                        </video>
+                        <div>
+                            <p class="sub-detail2-name">ETC1</p>
+                            <p class="sub-detail2-txt">Suspendisse eros ex, gravida nec nulla a, feugiat accumsan ligula. Vestibulum pulvinar egestas gravida. Pellentesque facilisis turpis eget arcu feugiat, eget condimentum purus convallis. Vestibulum pharetra odio vel enim commodo, ut interdum felis molestie. Curabitur interdum venenatis ligula, in auctor nulla aliquet et. Curabitur tempus felis felis. Aenean ut nisl fermentum, sagittis sapien ut, lacinia sem. Quisque bibendum, ante quis varius gravida, massa tortor tempus tortor, in lobortis dui purus eu dui.</p>
+                        </div>
+                    </div>
+                    <div class="sub-detail2">
+                        <video controls loop muted preload="지원불가" src="../video/abc.mp4" type="video/mp4"  poster="../images/product/abc.PNG" width="40%">
+                            영상을 재생할 수 없습니다.
+                        </video>
+                        <div>
+                            <p class="sub-detail2-name">ETC2</p>
+                            <p class="sub-detail2-txt">Vivamus malesuada ante et augue posuere, at auctor diam euismod. Sed vitae nisl erat. Etiam ante dui, condimentum ut eros in, maximus lacinia orci. Nullam sodales ac enim eget aliquet. Donec consectetur, erat vel laoreet cursus, velit urna tristique est, eget pulvinar felis turpis at lectus. Nullam a sagittis lacus. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin nec tempor augue. Sed feugiat egestas dui, hendrerit commodo est tempor quis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSprime Co., Ltd.</span>
+        </div>
+        <div class="info1-en">
+            <span>ECSPrime Corp.</span>
+            <span class="bar">｜</span>
+            <span>Address : #A-1403,1404 HIFIELD, 66 Beolmal-ro Dongan-gu, Anyang-si, Gyeonggi-do, Korea, Rep. 14058</span>
+        </div>
+        <div class="info2-en">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+    
+</body>
+</html>

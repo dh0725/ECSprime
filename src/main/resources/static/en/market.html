@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>market</title>
+
+    <!-- CSS -->
+    <link href="../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../global/global.css" rel="stylesheet" type="text/css">
+    <link href="../global/globalDetail.css" rel="stylesheet" type="text/css">
+    <link href="market.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../global/global.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang">
+                    <a href="market.html">
+                        <img src="../images/lang/usa_color.png" width="50px" />
+                    </a>
+                </button>
+                <button class="responsive-btn-lang">
+                    <a href="../ko/market.html">
+                        <img src="../images/lang/korea_black.png" class="ko-flag" width="50px"
+                            onmouseover="this.src='../images/lang/korea_color.png'" 
+                            onmouseout="this.src='../images/lang/korea_black.png'" />
+                    </a>
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="project.html">COMPANY</a>
+                <a href="market.html">MARKET</a>
+                <a href="product.html">PRODUCT</a>
+                <a href="development.html">R&D</a>
+                <a href="../board/list">NEWS</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <button onclick="goEnHome()">
+            <img src="../images/logo/main_logo.png" class="header-mainlogo" width="150px" />
+        </button>
+        <div>
+            <button class="btn-lang">
+                <a href="market.html">
+                    <img src="../images/lang/usa_color.png" class="en-flag" width="50px" />
+                </a>
+            </button>
+            <button class="btn-lang">
+                <a href="../ko/market.html">
+                    <img src="../images/lang/korea_black.png" class="ko-flag" width="50px"
+                    onmouseover="this.src='../images/lang/korea_color.png'" 
+                    onmouseout="this.src='../images/lang/korea_black.png'" />
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu-area">
+            <p class="offPage">
+                <a href="mission.html">COMPANY</a>
+            </p>
+            <p class="onPage">
+                <a href="market.html">MARKET</a>
+            </p>
+            <p class="offPage">
+                <a href="product.html">PRODUCT</a>
+            </p>
+            <p class="offPage">
+                <a href="development.html">R&D</a>
+            </p>
+            <p class="offPage">
+                <a href="../board/list">NEWS</a>
+            </p>
+        </div>
+        <div class="contents-area">
+            <div class="sub-menu-area">
+                <div class="sub-onPage">
+                    <a href="#construction">CONSTRUCTION</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="#agricultural">AGRICULTURE</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="#etc">ETC.</a>
+                </div>
+            </div>
+            <div class="contents-detail-area">
+                <div class="detail1">
+                    Our mission is to help your success and even that of your customers. Enjoy optimum quality and safety for great construction and agricultural machinery with our products and services.
+                </div>
+                <div id="construction" class="detail2">
+                    <p>CONSTRUCTION</p>
+                    <div>
+                        <div class="sub-detail2">
+                            <img src="../images/market/market1.png" width="600px" />
+                        </div>
+                        <div>
+                            <p class="sub-detail2-txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="agricultural" class="detail2">
+                    <p>AGRICULTURE</p>
+                    <div>
+                        <div class="sub-detail2">
+                            <img src="../images/market/market2.png" width="600px" />
+                        </div>
+                        <div>
+                            <p class="sub-detail2-txt">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="etc" class="detail2">
+                    <p>ETC..</p>
+                    <div>
+                        <div class="sub-detail2">
+                            <img src="../images/market/market3.jpg" width="600px" />
+                        </div>
+                        <div>
+                            <p class="sub-detail2-txt">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail3">
+                    <p class="dailt3-txt1">With today's increasing electronic control of construction sites and equipment, electronic control systems and controls are increasingly complex with increasing demands for advanced technologies, increasing the number of parts and complexity of S/W. In line with this, we offer a robust and innovative electronic control solution based on ICT technology to suit extremely harsh construction sites and equipment usage environments.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSprime Co., Ltd.</span>
+        </div>
+        <div class="info1-en">
+            <span>ECSPrime Corp.</span>
+            <span class="bar">｜</span>
+            <span>Address : #A-1403,1404 HIFIELD, 66 Beolmal-ro Dongan-gu, Anyang-si, Gyeonggi-do, Korea, Rep. 14058</span>
+        </div>
+        <div class="info2-en">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+    
+</body>
+</html>

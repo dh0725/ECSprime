@@ -1,0 +1,67 @@
+/* main */
+.contents-detail-area {
+    display: flex;
+    flex-direction: column;
+}
+.detail1 {
+    margin: 100px 0;
+    padding: 0 130px;
+}
+.detail1 > div {
+    text-align: center;
+    line-height: 23px;
+}
+.sub1-detail1 {
+    margin-bottom: 15px;
+    font-family: 'LiberationSans-Bold';
+    font-weight: bold;
+    font-size: 27px;
+}
+.sub2-detail1 {
+    font-family: 'LiberationSans-Regular';
+    font-size: 20px;
+}
+.txt-italic {
+    font-family: 'LiberationSans-BoldItalic';
+}
+.detail2 {
+    margin: 100px 0;
+    width: 100%;
+}
+.detail2 > div {
+    padding: 150px 0;
+    text-align: center;
+    line-height: 70px;
+    font-family: 'LiberationSans-Regular';
+    font-size: 28px;
+    background-color: #0e066a;
+    color: white;
+}
+.detail2 > div > div {
+    font-family: 'LiberationSans-Bold';
+    font-size: 80px;
+    color: rgb(233, 218, 14);
+}
+.detail3 {
+    margin: 100px 0 200px 0;
+    padding: 0 150px;
+}
+.detail3 > div {
+    line-height: 23px;
+    font-family: 'LiberationSans-Regular';
+    font-size: 20px;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* main */
+    .detail1, .detail2 {
+        margin: 25px 0;
+    }
+    .detail1, .detail3 {
+        padding: 0 25px;
+    }
+    .detail3 {
+        margin: 25px 0 50px 0;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECSprime</title>
+
+    <!-- CSS -->
+    <link href="../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../global/global.css" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../global/global.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang" onclick="goToEnglish()">
+                    <img src="../images/lang/usa_black.png" class="en-flag" width="50px"
+                        onmouseover="this.src='../images/lang/usa_color.png'" 
+                        onmouseout="this.src='../images/lang/usa_black.png'" />
+                </button>
+                <button class="responsive-btn-lang" class="ko-flag" onclick="goToKorean()">
+                    <img src="../images/lang/korea_color.png" width="50px" />
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="../ko/mission.html">COMPANY</a>
+                <a href="../ko/market.html">MARKET</a>
+                <a href="../ko/product.html">PRODUCT</a>
+                <a href="../ko/development.html">R&D</a>
+                <a href="../board/list">NEWS</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <img src="../images/logo/main_logo.png" class="header-logo" width="150px" />
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <div>
+            <button class="btn-lang" onclick="goToEnglish()">
+                <img src="../images/lang/usa_black.png" class="en-flag" width="43px"
+                    onmouseover="this.src='../images/lang/usa_color.png'" 
+                    onmouseout="this.src='../images/lang/usa_black.png'" />
+            </button>
+            <button class="btn-lang" onclick="goToKorean()">
+                <img src="../images/lang/korea_color.png" class="ko-flag" width="43px" />
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu">
+            <p>
+                <a href="../ko/mission.html" class="menu-name">COMPANY</a>
+            </p>
+            <p>
+                <a href="../ko/market.html" class="menu-name">MARKET</a>
+            </p>
+            <p>
+                <a href="../ko/product.html" class="menu-name">PRODUCT</a>
+            </p>
+            <p>
+                <a href="../ko/development.html" class="menu-name">R&D</a>
+            </p>
+            <p>
+                <a href="../board/list" class="menu-name">NEWS</a>
+            </p>
+        </div>
+        <div class="contents">
+            <div id="helloimg-container" onmouseover="showTooltip('helloimg-msg')" onmouseleave="hideTooltip('helloimg-msg')">
+                <img src="../images/hello/hello.gif" class="helloimg" width="250px" />
+                <div id="helloimg-msg">
+                    <a href="../ko/mission.html">반갑습니다! <br> ECSprime은 Embedded Computing 기술 전문가들로 이뤄진 기업입니다....</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSprime Co., Ltd.</span>
+        </div>
+        <div class="info1-ko">
+            <span>(주)이씨에스프라임</span>
+            <span class="bar">｜</span>
+            <span>주소 : 14058 경기도 안양시 동안구 벌말로 66, 평촌하이필드 A동 1403, 1404호</span>
+        </div>
+        <div class="info2-ko">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+    
+</body>
+</html>

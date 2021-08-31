@@ -1,0 +1,115 @@
+/* header */
+#header-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 45px;
+    padding: 5px 35px 5px 25px;
+    border-bottom: 2px solid black;
+}
+.header-logo {
+    display: none;
+}
+.fontawesomebar {
+    display: none;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.btn-lang {
+    padding: 0 30px;
+}
+
+/* main */
+#main-container {
+    display: flex;
+    background: url("../images/logo/main_logo_left_gap.png") no-repeat center center fixed;
+    width: 100%;
+    min-height: 750px;
+}
+.menu {
+    font-family: "AlteHaasGroteskBold";
+    font-size: 80px;
+    font-weight: bold;
+    padding: 140px 170px 0 30px;
+    border-right: 2px solid black;
+}
+.menu-name {
+    text-decoration: none;
+    color: black;
+}
+.menu-name:hover {
+    color: #e7bd03;
+}
+.menu-name::after {
+    position: absolute;
+    content: "";
+    display: block;
+    border-bottom: 3px solid black;
+    transition: all 200ms ease-out;
+    left: 0%;
+    width: 0;
+}
+.menu-name:hover::after {
+    transition: all 600ms ease-out;
+    width: 610px;
+    left: 0%;
+}
+#helloimg-container {
+    position: relative;
+}
+#helloimg-container > img {
+    position: absolute;
+    top: 500px;
+    left: -250px;
+}
+#helloimg-msg {
+    position: absolute;
+    top: 550px;
+    left: -100px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+#helloimg-msg.active {
+    opacity: 1;
+    background-color: white;
+}
+#helloimg-msg > a {
+    text-decoration: none;
+    font-family: 'NanumBarunGothic';
+    color: black;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* header */
+    #header-container {
+        justify-content: flex-start;
+    }
+    .fontawesomebar {
+        display: block;
+    }
+    .btn-lang {
+        display: none;
+    }
+    
+    /* main */
+    #main-container {
+        background-image: url("../images/logo/main_logo_vertical.png") !important;
+        background-size: 40%;
+        min-height:550px;
+    }
+    .menu {
+        display: none;
+    }
+    .contents {
+        display: none;
+    }
+}

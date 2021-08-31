@@ -1,0 +1,275 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>news - 글 수정</title>
+
+    <!-- CSS -->
+    <link href="../../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../../global/global.css" rel="stylesheet" type="text/css">
+    <link href="../../global/globalDetail.css" rel="stylesheet" type="text/css">
+    <link href="../../ko/register.css" rel="stylesheet" type="text/css">
+    <link href="../../ko/modify.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../../global/jquery-3.5.1.min.js"></script>
+    <script src="../../global/global.js"></script>
+	<script>
+		$(function() {
+			var form = $("#board");
+			var boardNo = $("#boardNo").val();
+			console.log(boardNo);
+			
+			// 수정완료 버튼 클릭 이벤트
+			$("#btnModify").on("click", function() {
+				alert("정말 수정하시겠습니까??")
+				form.attr("action", "/board/modify/" + boardNo);
+				form.attr("method", "post");
+				form.submit();
+				
+			});
+			
+			// 목록 버튼 클릭 이벤트
+			$("#btnList").on("click", function() {
+				self.location = "/board/list";
+			});
+
+            // 파일 삭제 버튼 클릭 이벤트
+            $(".btnFileDelete").on("click", function() {
+                console.log('abc')
+                var fileNo = $(this).attr("data");
+                
+                if (!confirm("정말로 삭제하시겠습니까??")) return;
+                $.ajax({
+                    url: "/files/delete/" + fileNo
+                    , type: "POST"
+                    , data: {
+                                "fileNo": fileNo
+                    }
+                    , success: function() {
+                        alert("파일 삭제 성공!");
+                        location.reload();
+                    }
+                    , error: function(err) {
+                        alert("파일 삭제 요청 시, 문제가 발생했습니다.");
+                    }
+                });
+            });
+
+            // 이미지 미리보기 (썸네일)
+			displayFile();
+		});
+
+        // 이미지 타입인지 확인
+		function checkImageType(fileName) {
+			var pattern = /jpg|gif|png|jpeg/i;
+			
+			return fileName.match(pattern);
+		}
+		
+		// 파일 이름 확인
+		function getOriginalName(fileName) {
+			var idx = fileName.indexOf("_") + 1;
+			
+			return fileName.substr(idx);
+		}
+		
+		// 첨부파일 가져오기
+		function displayFile() {
+			var boardNo = $("#boardNo").val();
+			
+			$.getJSON("/board/files/" + boardNo, function(fileList) {
+				$("#files").empty();
+				
+				$(fileList).each(function() {
+					console.log("data > " + this);
+					
+					var file = this;					// 파일 객체
+					var fileNo = file.fileNo;			// 파일 번호
+					var fileName = file.fileName;		// 이름
+					var fullName = file.fullName;		// 이름 + 경로
+					var str = "";
+					
+					if (checkImageType(fullName)) {
+						str = "<div><a href='/files/image?fullName=" + fullName + "'>"
+								+ "<img src='/files/image?fullName=" + fullName + "' />"
+								+ "</a> <br>"
+                                + "<input type='checkbox' name='deleteFileSync' value=" + fileNo + " />"
+								+ "<a href='/files/download/" + fileNo + "' class='fileName'>" + fileName + "</a>"
+								+ "</div>";
+					} else{
+						str = "<div><a href='/files/download/" + fileNo + "'>" 
+						+ fileName + "</a>"
+						+ "</div></div>";
+					}
+					
+			  		$("#files").append(str);
+				});
+				
+			});
+			
+		}
+	</script>
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon - white -->
+    <link rel="shortcut icon" href="../../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang">
+                    <a href="#">
+                        <img src="../../images/lang/usa_black.png" width="50px"
+							onmouseover="this.src='../../images/lang/usa_color.png'" 
+							onmouseout="this.src='../../images/lang/usa_black.png'" />
+                    </a>
+                </button>
+                <button class="responsive-btn-lang">
+                    <a href="#">
+                        <img src="../../images/lang/korea_color.png" class="ko-flag" width="50px" />
+                    </a>
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="../../ko/project.html">COMPANY</a>
+                <a href="../../ko/market.html">MARKET</a>
+                <a href="../../ko/product.html">PRODUCT</a>
+                <a href="../../ko/r&d.html">R&D</a>
+                <a href="../list">NEWS</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <button onclick="goEnHome()">
+            <img src="../../images/logo/main_logo.png" class="header-mainlogo" width="150px" />
+        </button>
+        <div>
+            <button class="btn-lang">
+                <a th:href="|/board/modify/${board.boardNo}|">
+                    <img src="../../images/lang/usa_black.png" class="en-flag" width="50px"
+						onmouseover="this.src='../../images/lang/usa_color.png'" 
+						onmouseout="this.src='../../images/lang/usa_black.png'" />
+                </a>
+            </button>
+            <button class="btn-lang">
+                <a th:href="|/board/modify/${board.boardNo}|">
+                    <img src="../../images/lang/korea_color.png" class="ko-flag" width="50px" />
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu-area">
+            <p class="offPage">
+                <a href="../../ko/mission.html">COMPANY</a>
+            </p>
+            <p class="offPage">
+                <a href="../../ko/market.html">MARKET</a>
+            </p>
+            <p class="offPage">
+                <a href="../../ko/product.html">PRODUCT</a>
+            </p>
+            <p class="offPage">
+                <a href="../../ko/r&d.html">R&D</a>
+            </p>
+            <p class="onPage">
+                <a href="../list">NEWS</a>
+            </p>
+        </div>
+        <div class="contents-area">
+	        <div class="contents-detail-area">
+		        <div class="detail1">
+		        	글 수정
+		        </div>
+		        <div class="detail2">
+					<form id="board" th:action="@{modify}" th:object="${board}" method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="boardNo" th:field="*{boardNo}" id="boardNo" />
+						<table>
+							<tr class="sub-detail2">
+								<td class="sub-detail2-title">제목</td>
+								<td class="sub-detail2-textBox">
+									<input type="text" name="title" th:field="*{title}" />
+								</td>
+							</tr>
+							<tr class="sub-detail2">
+								<td class="sub-detail2-title">작성자</td>
+								<td class="sub-detail2-textBox">
+									<input type="text" name="writer" th:field="*{writer}" />
+								</td>
+							</tr>
+							<tr class="sub-detail2">
+								<td class="sub-detail2-title">내용</td>
+								<td class="sub-detail2-textBox">
+									<textarea name="content" th:field="*{content}" rows="30" cols="107"></textarea>
+								</td>
+							</tr>
+							<tr class="sub-detail2">
+								<td class="sub-detail2-title">파일</td>
+								<td class="sub-detail2-textBox">
+									<input type="file" name="file" multiple />
+								</td>
+							</tr>
+							<tr class="sub-detail2">
+								<td class="sub-detail2-title">첨부파일</td>
+								<td class="sub-detail2-textBox">
+                                    <div class="files-check">삭제할 파일들을 체크해주세요</div>
+									<div id="files">
+										<div th:each="file : ${fileList}" class="files-list">
+											<input type="checkbox" name="deleteFileSync" th:value="${file.fileNo}" />
+											<a th:href="|/files/download/${file.fileNo}|" th:text="${file.fileName}"></a>
+											<span style="cursor: pointer;" th:data="${file.fileNo}" class="btnFileDelete">
+												<img src="../../images/icons/cancel.png" alt="cancel" />
+											</span>
+										</div>
+									</div>
+									<!-- <div class="zip-files" th:if="!${#lists.isEmpty(fileList)}">
+										<a th:href="|/files/download/zip/${board.boardNo}|">전체 다운로드</a>
+									</div> -->
+								</td>
+							</tr>
+						</table>
+					</form>
+					<div>
+						<button type="submit" id="btnModify">수정완료</button>
+						<button type="button" id="btnList">목록</button>
+					</div>
+		        </div>
+			</div>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSPrime Co., Ltd.</span>
+        </div>
+        <div class="info1-en">
+            <span>ECSPrime Corp.</span>
+            <span class="bar">｜</span>
+            <span>Address : #A-1403,1404 HIFIELD, 66 Beolmal-ro Dongan-gu, Anyang-si, Gyeonggi-do, Korea, Rep. 14058</span>
+        </div>
+        <div class="info2-en">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+
+</body>
+</html>

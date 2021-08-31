@@ -1,0 +1,146 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>news</title>
+
+    <!-- CSS -->
+    <link href="../../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../../global/global.css" rel="stylesheet" type="text/css">
+    <link href="../../global/globalDetail.css" rel="stylesheet" type="text/css">
+	<link href="../../ko/success.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../../global/jquery-3.5.1.min.js"></script>
+    <script src="../../global/global.js"></script>
+	<script>
+		$(function() {
+			var form = $("#board");
+			
+			// 등록 버튼 클릭 이벤트
+			$("#btnRegister").on("click", function() {
+				form.attr("action", "/board/register");
+				form.attr("method", "post");
+				form.submit();
+			});
+			
+			// 목록 버튼 클릭 이벤트
+			$("#btnList").on("click", function() {
+				self.location = "/board/list";
+			});
+			
+		});
+	</script>
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon - white -->
+    <link rel="shortcut icon" href="../../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang">
+                    <a href="../../en/news.html">
+                        <img src="../../images/lang/usa_black.png" width="50px"
+							onmouseover="this.src='../../images/lang/usa_color.png'" 
+							onmouseout="this.src='../../images/lang/usa_black.png'" />
+                    </a>
+                </button>
+                <button class="responsive-btn-lang">
+                    <a href="../../ko/news.html">
+                        <img src="../../images/lang/korea_color.png" class="ko-flag" width="50px" />
+                    </a>
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="../../ko/project.html">COMPANY</a>
+                <a href="../../ko/market.html">MARKET</a>
+                <a href="../../ko/product.html">PRODUCT</a>
+                <a href="../../ko/development.html">R&D</a>
+                <a href="list">NEWS</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <button onclick="goEnHome()">
+            <img src="../../images/logo/main_logo.png" class="header-mainlogo" width="150px" />
+        </button>
+        <div>
+            <button class="btn-lang">
+                <a href="list">
+                    <img src="../../images/lang/usa_black.png" class="en-flag" width="50px"
+						onmouseover="this.src='../../images/lang/usa_color.png'" 
+						onmouseout="this.src='../../images/lang/usa_black.png'" />
+                </a>
+            </button>
+            <button class="btn-lang">
+                <a href="list">
+                    <img src="../../images/lang/korea_color.png" class="ko-flag" width="50px" />
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu-area">
+            <p class="offPage">
+                <a href="../../ko/mission.html">COMPANY</a>
+            </p>
+            <p class="offPage">
+                <a href="../../ko/market.html">MARKET</a>
+            </p>
+            <p class="offPage">
+                <a href="../../ko/product.html">PRODUCT</a>
+            </p>
+            <p class="offPage">
+                <a href="../../ko/development.html">R&D</a>
+            </p>
+            <p class="onPage">
+                <a href="list">NEWS</a>
+            </p>
+        </div>
+        <div class="contents-area">
+        	<div class="contents-detail-area">
+		        <p th:text="${msg}"></p>
+		        <div>
+			        <a th:href="@{/board/list}">
+		        		<img src="../../images/logo/success.jpg" width="30%" class="img-success" />
+					</a>
+		        </div>
+        	</div>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSprime Co., Ltd.</span>
+        </div>
+        <div class="info1-ko">
+            <span>(주)이씨에스프라임</span>
+            <span class="bar">｜</span>
+            <span>주소 : 14058 경기도 안양시 동안구 벌말로 66, 평촌하이필드 A동 1403, 1404호</span>
+        </div>
+        <div class="info2-ko">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+    
+</body>
+</html>

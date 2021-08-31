@@ -1,0 +1,66 @@
+/* main > contents-detail-area */
+.files-check {
+    font-family: 'NanumBarunGothicBold';
+    font-size: 1.2vw;
+    color: red;
+}
+.files-list > a {
+	text-decoration: none;
+	font-family: 'LiberationSans-Regular';
+	font-size: 1.2vw;
+	color: black;
+}
+.files-list > a:hover {
+	font-family: 'LiberationSans-Bold';
+	font-weight: bold;
+	text-decoration: underline;
+}
+#files > div > .fileName {
+    text-decoration: none;
+	font-family: 'LiberationSans-Regular';
+	font-size: 1.2vw;
+	color: black;
+}
+#files > div > .fileName:hover {
+    font-family: 'LiberationSans-Bold';
+	font-weight: bold;
+	text-decoration: underline;
+}
+#files > div > a > img {
+	width: 300px;
+}
+#btnModify {
+    padding: 10px 20px;
+	border: 1px solid black;
+	font-family: 'NanumBarunGothicBold';
+	font-size: 15px;
+	text-align: center;
+}
+#btnModify:hover {
+    background-color: black;
+	color: white;
+}
+.sub-detail2-title {
+    word-break: keep-all;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* contents-area */
+    .detail2 > div {
+        margin: 50px 0;
+    }
+    .sub-detail2-title {
+        /* font-size: 1.96vw; */
+        font-size: 20px;
+    }
+    .sub-detail2-textBox {
+        padding: 0;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 437px) {
+    #files > div > a > img {
+        width: 150px;
+    }
+}

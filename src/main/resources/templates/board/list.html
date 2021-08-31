@@ -1,0 +1,279 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>news</title>
+
+    <!-- CSS -->
+    <link href="../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../global/global.css" rel="stylesheet" type="text/css">
+	<link href="../global/globalDetail.css" rel="stylesheet" type="text/css">
+	<link href="../ko/list.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../global/jquery-3.5.1.min.js"></script>
+    <script src="../global/global.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang">
+                    <a href="list">
+                        <img src="../images/lang/usa_black.png" width="50px"
+							onmouseover="this.src='../images/lang/usa_color.png'" 
+							onmouseout="this.src='../images/lang/usa_black.png'" />
+                    </a>
+                </button>
+                <button class="responsive-btn-lang">
+                    <a href="list">
+                        <img src="../images/lang/korea_color.png" class="ko-flag" width="50px" />
+                    </a>
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="../ko/project.html">COMPANY</a>
+                <a href="../ko/market.html">MARKET</a>
+                <a href="../ko/product.html">PRODUCT</a>
+                <a href="../ko/development.html">R&D</a>
+                <a href="list">NEWS</a>
+				<form action="/auth/logout" method="post" class="logoutForm">
+					<input type="submit" value="로그아웃" />
+				</form>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <button onclick="goEnHome()">
+            <img src="../images/logo/main_logo.png" class="header-mainlogo" width="150px" />
+        </button>
+        <div>
+            <button class="btn-lang">
+                <a href="list">
+                    <img src="../images/lang/usa_black.png" class="en-flag" width="50px"
+						onmouseover="this.src='../images/lang/usa_color.png'" 
+						onmouseout="this.src='../images/lang/usa_black.png'" />
+                </a>
+            </button>
+            <button class="btn-lang">
+                <a href="list">
+                    <img src="../images/lang/korea_color.png" class="ko-flag" width="50px" />
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu-area">
+            <p class="offPage">
+                <a href="../ko/mission.html">COMPANY</a>
+            </p>
+            <p class="offPage">
+                <a href="../ko/market.html">MARKET</a>
+            </p>
+            <p class="offPage">
+                <a href="../ko/product.html">PRODUCT</a>
+            </p>
+            <p class="offPage">
+                <a href="../ko/development.html">R&D</a>
+            </p>
+            <p class="onPage">
+                <a href="list">NEWS</a>
+            </p>
+			<form action="/auth/logout" method="post" class="logoutForm">
+				<input type="submit" value="로그아웃" />
+			</form>
+        </div>
+        <div class="contents-area">
+	        <div class="contents-detail-area">
+		        <div class="detail1">
+		        	NEWS
+		        </div>
+		        <div class="detail2">
+					<form th:action="@{list}" method="GET">
+						<a th:href="@{register}">글 쓰기</a>
+						<input type="text" name="keyword" th:value="${page.keyword}" class="keyword-box" />
+						<input type="submit" value="검색" class="search-box" />
+						
+						<input type="hidden" name="pageNum" th:value="${page.pageNum}" />
+						<input type="hidden" name="totalCount" th:value="${page.totalCount}" />
+						<input type="hidden" name="rowsPerPage" th:value="${page.rowsPerPage}" />
+						<input type="hidden" name="pageCount" th:value="${page.pageCount}" />
+						<input type="hidden" name="firstPage" th:value="${page.firstPage}" />
+						<input type="hidden" name="lastPage" th:value="${page.lastPage}" />
+						
+						<select id="rowsPerPage" name="rowsPerPage">
+							<option value="5">5줄 보기</option>
+							<option value="10">10줄 보기</option>
+							<option value="20">20줄 보기</option>
+							<option value="30">30줄 보기</option>
+						</select>
+						<select id="pageCount" name="pageCount">
+							<option value="5">5페이지 보기</option>
+							<option value="10">10페이지 보기</option>
+							<option value="20">20페이지 보기</option>
+						</select>						
+					</form>
+
+					<table>
+						<thead>
+							<tr>
+								<th width="630" class="table-header">제목</th>
+								<th width="230" class="table-header">등록일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:if="${#lists.isEmpty(list)}">
+								<td colspan="6" align="center" class="table-no-contents">
+									조회된 데이터가 없습니다.
+								</td>
+							</tr>
+							<tr th:each="board : ${list}">
+								<td align="left" class="table-contents-detail1">
+									<a th:href="@{|/board/read/${board.boardNo}|}" th:text="${board.title}"></a>
+								</td>
+								<td align="center" th:text="${ #dates.format(board.regDate, 'yyyy-MM-dd') }" class="table-contents-detail2"></td>
+							</tr>
+						</tbody>
+					</table>
+
+                    <br>
+			
+					<!-- 페이징 처리 -->
+					<div class="paging" th:if="${page.totalCount} != 0" th:object="${page}" align="center">
+						<!-- 처음 -->
+						<a class="paging-double" th:href="|/board/list?pageNum=*{firstPage}
+																		&totalCount=*{totalCount}
+																		&rowsPerPage=*{rowsPerPage}
+																		&pageCount=*{pageCount}
+																		&keyword=*{keyword}|">
+								<i class="fas fa-angle-double-left"></i>
+						</a>
+					
+						<!-- 이전 -->
+						<th:block th:if="*{prev > 0}">
+							<a class="paging-single" th:href="|/board/list?pageNum=*{prev}
+																			&totalCount=*{totalCount}
+																			&rowsPerPage=*{rowsPerPage}
+																			&pageCount=*{pageCount}
+																			&keyword=*{keyword}|">
+								<i class="fas fa-angle-left"></i>
+							</a>
+						</th:block>
+						
+						<!-- 페이징 -->
+						<th:block th:each="no : ${#numbers.sequence(page.startPage, page.endPage)}">
+							<th:block th:if="${no == page.pageNum}">
+								<span class="txt-bold">
+							</th:block>
+							<a class="paging-number" th:href="|/board/list?pageNum=${no}
+																			&totalCount=*{totalCount}
+																			&rowsPerPage=*{rowsPerPage}
+																			&pageCount=*{pageCount}
+																			&keyword=*{keyword}|"
+								th:text="${no}"></a>
+							<th:block th:if="${no == page.pageNum}">
+								</span>
+							</th:block>
+						</th:block>
+						
+						<!-- 다음 -->
+						<th:block th:if="*{next <= lastPage}">
+							<a class="paging-single" th:href="|/board/list?pageNum=*{next}
+																			&totalCount=*{totalCount}
+																			&rowsPerPage=*{rowsPerPage}
+																			&pageCount=*{pageCount}
+																			&keyword=*{keyword}|">
+								<i class="fas fa-angle-right"></i>
+							</a>
+						</th:block>
+						
+						<!-- 마지막 -->
+						<a class="paging-double" th:href="|/board/list?pageNum=*{lastPage}
+																		&totalCount=*{totalCount}
+																		&rowsPerPage=*{rowsPerPage}
+																		&pageCount=*{pageCount}
+																		&keyword=*{keyword}|">
+								<i class="fas fa-angle-double-right"></i>
+						</a>
+					</div>
+					
+				    <script>
+					    $(function() {
+							var pageNum = "[[${page.pageNum}]]";
+							var totalCount = "[[${page.totalCount}]]";
+							var rowsPerPage = "[[${page.rowsPerPage}]]";
+							var pageCount = "[[${page.pageCount}]]";
+							var keyword = "[[${page.keyword}]]";
+							/* console.log(pageNum, totalCount, rowsPerPage, pageCount, keyword); */
+							
+							// 페이지 당 게시글 수를 현재 페이지 당 게시글 수로 초기화
+							$("#rowsPerPage option[value=" + rowsPerPage + "]").attr("selected", "selected");
+							// 노출 페이지 수를 현재 노출 페이지 수 초기화
+							$("#pageCount option[value=" + pageCount + "]").attr("selected", "selected");
+							// '페이지 당 게시글 수' 버튼 변경 이벤트
+							$("#rowsPerPage").on("change", function() {
+								rowsPerPage = $(this).val();
+								
+								// /board/list?pageNum=&totalCount=&rowsPerPage=&pageCount=&keyword=
+								location.href = "/board/list?pageNum=" + 1
+															+ "&totalCount=" + totalCount
+															+ "&rowsPerPage=" + rowsPerPage
+															+ "&pageCount=" + pageCount
+															+ "&keyword=" + keyword;
+							});
+							// '노출 페이지 수' 버튼 변경 이벤트
+							$("#pageCount").on("change", function() {
+								pageCount = $(this).val();
+								
+								// /board/list?pageNum=&totalCount=&rowsPerPage=&pageCount=&keyword=
+								location.href = "/board/list?pageNum=" + 1
+															+ "&totalCount=" + totalCount
+															+ "&rowsPerPage=" + rowsPerPage
+															+ "&pageCount=" + pageCount
+															+ "&keyword=" + keyword;
+							});
+						})
+					</script>
+		        </div>
+			</div>
+        </div>
+    </main>
+    
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSprime Co., Ltd.</span>
+        </div>
+        <div class="info1-en">
+            <span>ECSprime Corp.</span>
+            <span class="bar">｜</span>
+            <span>Address : #A-1403,1404 HIFIELD, 66 Beolmal-ro Dongan-gu, Anyang-si, Gyeonggi-do, Korea, Rep. 14058</span>
+        </div>
+        <div class="info2-en">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+    
+</body>
+</html>

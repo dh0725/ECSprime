@@ -1,0 +1,77 @@
+/* main */
+.contents-detail-area {
+    display: flex;
+    flex-direction: column;
+}
+.detail1 {
+    margin: 100px 0;
+    padding: 0 150px;
+}
+.detail1 > div {
+    text-align: center;
+    line-height: 23px;
+}
+.sub1-detail1 {
+    margin-bottom: 15px;
+    font-family: 'NanumBarunGothicBold';
+    font-weight: bold;
+    font-size: 27px;
+}
+.sub2-detail1 {
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    word-break: keep-all;
+}
+.txt-italic {
+    font-style: italic;
+    font-weight: bold;
+}
+.detail2 {
+    margin: 100px 0;
+    width: 100%;
+}
+.detail2 > div {
+    padding: 150px 0;
+    text-align: center;
+    line-height: 70px;
+    font-family: 'NanumBarunGothic';
+    font-size: 30px;
+    background-color: #0e066a;
+    color: white;
+    word-break: keep-all;
+}
+.detail2 > div > div {
+    font-family: 'NanumBarunGothicBold';
+    font-size: 80px;
+    color: rgb(233, 218, 14);
+}
+.detail3 {
+    margin: 100px 0 200px 0;
+    padding: 0 150px;
+}
+.detail3 > div {
+    line-height: 23px;
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    word-break: keep-all;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* main */
+    #main-container {
+        display: block;
+    }
+    .contents-area {
+        display: block;
+    }
+    .detail1, .detail2 {
+        margin: 25px 0;
+    }
+    .detail1, .detail3 {
+        padding: 0 25px;
+    }
+    .detail3 {
+        margin: 25px 0 50px 0;
+    }
+}

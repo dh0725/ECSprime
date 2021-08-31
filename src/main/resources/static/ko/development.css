@@ -1,0 +1,52 @@
+/* main > contents-detail-area */
+.txt-italic {
+    font-style: italic;
+}
+.txt-bold {
+    font-family: 'NanumBarunGothicBold';
+}
+.contents-detail-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detail1 {
+    margin: 150px 0 100px 0;
+    padding: 0 150px;
+    word-break: keep-all;
+}
+.detail1-name {
+    font-family: 'NanumBarunGothicBold';
+    font-weight: bold;
+    font-size: 27px;
+    color: #0e066a;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.detail1-txt1, .detail1-txt2 {
+    margin-bottom: 20px;
+    font-family: 'NanumBarunGothicBold';
+    font-size: 20px;
+    text-align: center;
+}
+.detail3 {
+    margin: 100px 0 150px 0;
+    padding: 0 150px;
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    line-height: 23px;
+    word-break: keep-all;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* main */
+    .detail1 {
+        margin: 25px 0;
+        padding: 0 25px;
+    }
+    .detail3 {
+        margin: 25px 0 100px 0;
+        padding: 0 25px;
+    }
+}

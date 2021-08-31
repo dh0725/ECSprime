@@ -1,0 +1,54 @@
+/* main */
+.contents-detail-area {
+    display: flex;
+    padding: 0 12.0vw 0 12.0vw;
+}
+.detail1 {
+    border-right: 2px solid black;
+}
+.detail1 > div {
+    margin-top: 100px;
+    padding: 0 15px 0 30px;
+    height: 150px;
+    font-family: "AlteHaasGroteskBold";
+    font-size: 27px;
+}
+.detail2 > div {
+    margin-top: 100px;
+    padding-left: 30px;
+    height: 150px;
+    font-family: 'LiberationSans-Regular';
+    font-size: 20px;
+}
+.detail2 > div > p {
+    margin-bottom: 0.03vw;
+}
+.txt-italic {
+    font-family: 'LiberationSans-BoldItalic';
+}
+.txt-bold {
+    font-family: "AlteHaasGroteskBold";
+}
+.detail3 {
+    display: none;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1300px) {
+    /* main */
+    .contents-detail-area {
+        padding: 0 100px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* main */
+    .contents-detail-area {
+        padding: 0;
+    }
+    .detail1, .detail2 {
+        display: none;
+    }
+    .detail3 {
+        display: block;
+    }
+}

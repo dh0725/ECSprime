@@ -1,0 +1,100 @@
+/* main */
+.contents-detail-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detail1 {
+    margin: 150px 0;
+    padding: 0 150px;
+}
+.detail1-txt1 {
+    margin-bottom: 15px;
+    font-family: 'LiberationSans-Bold';
+    font-size: 27px;
+}
+.detail1-txt2 {
+    line-height: 23px;
+    font-family: 'LiberationSans-Regular';
+    font-size: 20px;
+}
+.detail2 {
+    display: flex;
+    flex-direction: column; 
+}
+.detail2-name {
+    margin-bottom: 35px;
+    text-align: center;
+    font-family: 'LiberationSans-Bold';
+    font-size: 30px;
+    font-weight: bold;
+    color: #0e066a;
+}
+.detail3 {
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.sub-detail3 {
+    margin-bottom: 30px;
+    width: 30%;
+    min-width: 200px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.sub-detail3 > img {
+    height: 300px;
+}
+.sub-detail3-name {
+    margin: 20px 0;
+    text-align: center;
+    font-family: 'LiberationSans-Bold';
+    font-size: 27px;
+    font-weight: bold;
+}
+.sub-detail3-txt {
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'LiberationSans-Regular';
+    font-size: 15px;
+    line-height: 30px;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1300px) {
+    .contents-detail-area {
+        padding: 0 100px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* main */
+    #main-container {
+        display: block;
+    }
+    .contents-detail-area {
+        padding: 0;
+    }
+    .detail1 {
+        margin: 25px 0 100px 0;
+        padding: 0 25px;
+    }
+    .detail2-name {
+        padding: 0 40px;
+    }
+    .detail3 {
+        padding: 0;
+    }
+    .sub-detail3 {
+        width: 70%;
+    }
+    .sub-detail3-name {
+        font-size: 20px;
+    }
+    .sub-detail3 > img {
+        height: 250px;
+    }
+}

@@ -1,0 +1,90 @@
+/* main */
+.contents-detail-area {
+    display: flex;
+    flex-direction: column;
+}
+.detail1 {
+    margin: 150px 0;
+    padding: 0 150px;
+}
+.detail1-txt1 {
+    margin-bottom: 15px;
+    font-family: 'NanumBarunGothicBold';
+    font-size: 27px;
+    word-break: keep-all;
+}
+.detail1-txt2 {
+    line-height: 23px;
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    word-break: keep-all;
+}
+.detail2 {
+    background-color: #e7bd03;
+}
+.detail2-txt1 {
+    margin: 75px 0 35px 0;
+    text-align: center;
+    font-family: 'NanumBarunGothicBold';
+    font-size: 27px;
+    font-weight: bold;
+    color: #0e066a;
+}
+.detail3 {
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.sub-detail3 {
+    width: 30%;
+}
+.sub-detail3 > a {
+    text-decoration: none;
+    color: black;
+}
+.sub-detail3 > div {
+    margin-bottom: 25px;
+}
+.img-company {
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1); 
+    -o-transform:scale(1);  
+    transform:scale(1);
+    -webkit-transition:.3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+}
+.sub-detail3 > div:hover .img-company {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);   
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+}
+.sub-detail3 > p {
+    margin: 35px 0 100px 0;
+    text-align: center;
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    line-height: 23px;
+    word-break: keep-all;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* main */
+    .detail1 {
+        margin: 25px 0 100px 0;
+        padding: 0 25px;
+    }
+    .detail3 {
+        padding: 0;
+    }
+    .sub-detail3 {
+        width: 80%;
+    }
+}

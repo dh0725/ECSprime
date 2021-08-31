@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>partner</title>
+
+    <!-- CSS -->
+    <link href="../global/reset.css" rel="stylesheet" type="text/css">
+    <link href="../global/global.css" rel="stylesheet" type="text/css">
+    <link href="../global/globalDetail.css" rel="stylesheet" type="text/css">
+    <link href="partner.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script src="../global/global.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b5465dc740.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="icon" href="../images/logo/favicon_white.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="../images/logo/favicon_white.png">
+</head>
+<body>
+
+    <div id="responsive-container">
+        <div id="responsive-background" onclick="hideToggleMenu('responsive-background')">
+            <div class="lang-container">
+                <button class="responsive-btn-lang">
+                    <a href="partner.html">
+                        <img src="../images/lang/usa_color.png" width="50px" />
+                    </a>
+                </button>
+                <button class="responsive-btn-lang">
+                    <a href="../ko/partner.html">
+                        <img src="../images/lang/korea_black.png" class="ko-flag" width="50px"
+                            onmouseover="this.src='../images/lang/korea_color.png'" 
+                            onmouseout="this.src='../images/lang/korea_black.png'" />
+                    </a>
+                </button>
+            </div>
+            <div id="responsive-menu-container">
+                <a href="mission.html">COMPANY</a>
+                <a href="market.html">MARKET</a>
+                <a href="product.html">PRODUCT</a>
+                <a href="development.html">R&D</a>
+                <a href="../board/list">NEWS</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header-container">
+        <button onclick="toggleMenu()">
+            <div class="fontawesomebar">
+                <i class="fas fa-bars fa-3x"></i>
+            </div>
+        </button>
+        <button onclick="goEnHome()">
+            <img src="../images/logo/main_logo.png" class="header-mainlogo" width="150px" />
+        </button>
+        <div>
+            <button class="btn-lang">
+                <a href="partner.html">
+                    <img src="../images/lang/usa_color.png" class="en-flag" width="50px" />
+                </a>
+            </button>
+            <button class="btn-lang">
+                <a href="../ko/partner.html">
+                    <img src="../images/lang/korea_black.png" class="ko-flag" width="50px"
+                        onmouseover="this.src='../images/lang/korea_color.png'" 
+                        onmouseout="this.src='../images/lang/korea_black.png'" />
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div class="menu-area">
+            <p class="onPage">
+                <a href="mission.html">COMPANY</a>
+            </p>
+            <p class="offPage">
+                <a href="market.html">MARKET</a>
+            </p>
+            <p class="offPage">
+                <a href="product.html">PRODUCT</a>
+            </p>
+            <p class="offPage">
+                <a href="development.html">R&D</a>
+            </p>
+            <p class="offPage">
+                <a href="../board/list">NEWS</a>
+            </p>
+        </div>
+        <div class="contents-area">
+            <div class="sub-menu-area">
+                <div class="sub-offPage">
+                    <a href="mission.html">MISSION</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="history.html">HISTORY</a>
+                </div>
+                <div class="sub-offPage">
+                    <a href="project.html">PROJECT</a>
+                </div>
+                <div class="sub-onPage">
+                    <a href="partner.html">PARTNER</a>
+                </div>
+            </div>
+            <div class="contents-detail-area">
+                <div class="detail1">
+                    <p class="detail1-txt1">We build partnerships with trust as our top priority.</p>
+                    <p class="detail1-txt2">We build strong mutual trust by contributing the best value to our customers. By  understanding customer needs accurately, we provide products and services concentrated our best capabilities at the optimal time and cost.</p>
+                </div>
+                <div class="detail2">
+                    <p class="detail2-txt1">Cooperator</p>
+                    <div class="detail3">
+                        <div class="sub-detail3">
+                            <div>
+                                <a href="http://www.hyundai-genuine.com/?locale=en" target="_blank">
+                                    <img src="../images/partner/hyundai_genuine.jpg" class="img-company" width="100%" />
+                                </a>
+                            </div>
+                            <p>
+                                <span class="txt-bold">Hyundai Genuine</span> manufactures hydraulic components for heavy equipment and is a global construction equipment component specialist for subsidiaries and customers such as Hyundai Construction Equipment and Doosan Infracore.
+                            </p>
+                        </div>
+                        <div class="sub-detail3">
+                            
+                            <div>
+                                <a href="http://cymechs.com/en/" target="_blank">
+                                    <img src="../images/partner/cymechs.jpg" class="img-company" width="100%" />
+                                </a>
+                            </div>
+                            <p>
+                                <span class="txt-bold">Cymechs</span> is a specialized Tool Automation company that manufactures and supplies transfer chambers including ATM Robots and Vacuum Robots for EFEM, LPM, EFEM, which are essential for semiconductor manufacturing facilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="copyright">
+            <span>ⓒ2017-2021 ECSprime Co., Ltd.</span>
+        </div>
+        <div class="info1-en">
+            <span>ECSPrime Corp.</span>
+            <span class="bar">｜</span>
+            <span>Address : #A-1403,1404 HIFIELD, 66 Beolmal-ro Dongan-gu, Anyang-si, Gyeonggi-do, Korea, Rep. 14058</span>
+        </div>
+        <div class="info2-en">
+            <span>E. sky@ecsprime.com</span>
+            <span class="bar">｜</span>
+            <span>T . 031-342-0201</span>
+            <span class="bar">｜</span>
+            <span>F . 031-342-0215</span>
+        </div>
+    </footer>
+    
+</body>
+</html>
