@@ -6,7 +6,6 @@ function goKoHome() {
     window.location.href = "../ko/main.html"
 }
 
-
 /* change language */
 function goToKorean() {
     window.location.href = "../ko/main.html"
@@ -15,19 +14,17 @@ function goToEnglish() {
     window.location.href = "../en/main.html"
 }
 
-
 /* hand shape click tooltip */
 function showTooltip(id) {
     var helloImg = document.getElementById(id);
     helloImg.classList.add('active');
-    console.log(helloImg);
+    // console.log(helloImg);
 }
 function hideTooltip(id) {
     var byeImg = document.getElementById(id);
     byeImg.classList.remove('active');
-    console.log(byeImg);
+    // console.log(byeImg);
 }
-
 
 /* responsive menu bars */
 function toggleMenu() {
@@ -39,7 +36,6 @@ function toggleMenu() {
     }
     console.log(helloMenu);
 }
-
 
 /* background */
 function hideToggleMenu(id) {

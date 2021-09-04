@@ -45,6 +45,20 @@ html {
     font-family: 'LiberationSans-Regular';
     font-size: 20px;
 }
+#btnToTop {
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    z-index: 999;
+    display: none;
+}
+#btnToBottom {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 999;
+    display: none;
+}
 
 /* 반응형 */
 @media screen and (max-width: 1024px) {
