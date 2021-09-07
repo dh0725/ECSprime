@@ -27,7 +27,7 @@
 			// 삭제 버튼 클릭 이벤트
 			$("#btnRemove").on("click", function() {
 				alert("정말 삭제하시겠습니까??");
-				form.attr("action", "/board/remove/" + boardNo);
+				form.attr("action", "board/remove/" + boardNo);
 				form.attr("method", "post");
 				form.submit();
 			});
