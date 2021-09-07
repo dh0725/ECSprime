@@ -154,7 +154,7 @@ public class BoardController {
 		
 		model.addAttribute("msg", "삭제가 완료되었습니다..");
 		
-		return "/board/success";
+		return "board/success";
 	}
 	
 	// 파일 목록 갱신
